@@ -1,0 +1,79 @@
+Program.Sub.ScreenSU.Start
+Program.Sub.ScreenSU.End
+
+Program.Sub.Preflight.Start
+
+Program.Sub.Preflight.End
+
+Program.Sub.Main.Start
+F.Intrinsic.Control.SetErrorHandler("Main_Err")
+F.Intrinsic.Control.ClearErrors
+
+V.Local.sError.Declare(String)
+
+'Coded by: WAW
+'Date: 2/27/17
+'There will be a search button on to the Forecast maintenance screen to allow the user 1 field to be searched. 
+'The search will return all distinct values from the user 1 field in the forecast Header records. 
+'Once a value is selected the user 1 field will populate with the data.
+
+'open connection to the database
+F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)
+
+'declare local variables
+V.Local.suser1.Declare(String)
+v.Local.ssql.Declare(String)
+v.Local.stitles.Declare(string)
+v.Local.iwidths.Declare(long)
+v.Local.sret.Declare(String)
+
+'if the populate hook fires, set the browser button on the screen
+f.Intrinsic.Control.If(v.Caller.Hook,=,50902)
+'	F.Intrinsic.Variable.SetProperty(v.Passed.000288,"PW",25)
+	'set the hidden control button
+	V.Passed.GAB-BTN-1.Set("User 1")
+	F.Intrinsic.Variable.SetProperty("GAB-BTN-1","PL",620)
+	F.Intrinsic.Variable.SetProperty("GAB-BTN-1","PT",200)
+	F.Intrinsic.Variable.SetProperty("GAB-BTN-1","PW",100)
+	'make the button available
+	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.GAB-BTN-1,"HIDE",0)
+	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.GAB-BTN-1,"LOCK",0)
+f.Intrinsic.Control.EndIf
+
+'check to see if the hook associated with the hidden control button is selected
+F.intrinsic.control.if(V.Caller.Hook,=,50988)
+	'set the browser type ahead
+	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)
+	Function.Intrinsic.String.Split("User 1*!*Customer*!*Part*!*Loc*!*Description*!*Start Date","*!*",variable.local.sTitles)
+	Function.Intrinsic.String.Split("800*!*1000*!*2000*!*500*!*3000*!*1000","*!*",variable.local.iWidths)
+	'launch a custom browser to allow the user to select a distinct user 1 record
+	Function.Intrinsic.UI.Browser("Select a User 1 field","con","Select distinct USER_1, CUSTOMER, PART, LOC, DESCRIPTION, START_DATE From V_FORECAST_SUMMARY",Variable.Local.sTitles,Variable.Local.iWidths,Variable.Local.sRet)
+	Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")
+		'if nothing is selected inform the user
+		Function.Intrinsic.UI.Msgbox("No User 1 was selected!")
+	Function.Intrinsic.Control.Else
+		'otherwise split the return and set the selected user in the user 1 field
+		 Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)
+		 v.Passed.000289.Set(v.Local.sret(0).Trim)
+	Function.Intrinsic.Control.EndIf
+F.Intrinsic.Control.EndIf
+
+F.ODBC.Connection!con.close
+F.Intrinsic.Control.ExitSub
+
+F.Intrinsic.Control.Label("Main_Err")
+F.Intrinsic.Control.If(V.Ambient.ErrorNumber,<>,0)
+	Function.Intrinsic.String.Concat("Project: GCG_4387_Forecast_Browser.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)
+	F.Intrinsic.UI.Msgbox(V.Local.sError)
+	F.Intrinsic.Control.End
+
+Function.Intrinsic.Control.EndIf
+
+
+Program.Sub.Main.End
+
+Program.Sub.Comments.Start
+${$0$}$GCG_INT_INFO$}$WAW$}$5/7/2015$}$False
+${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This will be a custom GAB script that will run from a custom Menu Item under Bill of Material -> File -> Custom Cobalt BOM Import.  The user will navigate to the xml file that needs to be loaded into Global Shop.  Once the xml is parsed there will be a search in Global Shop to see if a BOM already exists for that Part Number.  If one already exists a compare screen will display showing the differences between the two.  If one does not exist then the screen will display the BOM as it will be uploaded into Global Shop.  Any parts that are listed in the BOM that are not Inventory Parts will be highlighted in Yellow.  If there are any parts not in inventory the user will have the option to click the create Parts button to generate those parts in Global Shop.  If the BOM exists in Global shop then any differences on the new import will be highlighted in Red.  After the Parts have been created then the Upload button will upload and override any previous BOM for that part.
+Program.Sub.Comments.End
+
