@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SyntaxEdit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <BorderStyle>None</BorderStyle>
+  <Pages>
+    <DefaultPage>
+      <Header>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Header>
+      <Footer>
+        <Offset>
+          <X>0</X>
+          <Y>0</Y>
+        </Offset>
+      </Footer>
+      <PageSize>
+        <Width>0</Width>
+        <Height>0</Height>
+      </PageSize>
+    </DefaultPage>
+  </Pages>
+  <DisplayStrings />
+  <Selection>
+    <SelectionRect>
+      <Location>
+        <X>0</X>
+        <Y>74</Y>
+      </Location>
+      <Size>
+        <Width>24</Width>
+        <Height>3</Height>
+      </Size>
+      <X>0</X>
+      <Y>74</Y>
+      <Width>24</Width>
+      <Height>3</Height>
+    </SelectionRect>
+    <Options>UseColors OverwriteBlocks SelectLineOnTripleClick CopyLineWhenEmpty SelectWordOnCtrlClick</Options>
+  </Selection>
+  <Gutter>
+    <LineNumbersForeColor>WindowText</LineNumbersForeColor>
+    <Options>PaintLineNumbers PaintBookMarks PaintLineModificators</Options>
+  </Gutter>
+  <Margin>
+    <Visible>false</Visible>
+  </Margin>
+  <LineStyles />
+  <LineSeparator />
+  <Printing>
+    <Footer>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Footer>
+    <Header>
+      <Offset>
+        <X>0</X>
+        <Y>0</Y>
+      </Offset>
+    </Header>
+  </Printing>
+  <WhiteSpace />
+  <TextSource>
+    <Position>
+      <X>0</X>
+      <Y>74</Y>
+    </Position>
+    <Lexer>
+      <Scheme>
+        <Author>Quantum Whale, LLC.</Author>
+        <Copyright>Copyright (c) 2004 - 2014 Quantum Whale LLC.</Copyright>
+        <FileType>gas</FileType>
+        <Version>1.5</Version>
+        <Styles>
+          <Style>
+            <Name>idents</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>numbers</Name>
+            <ForeColor>ControlText</ForeColor>
+          </Style>
+          <Style>
+            <Name>reswords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>comments</Name>
+            <ForeColor>Green</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>xmlcomments</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>symbols</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>whitespace</Name>
+            <ForeColor>WindowText</ForeColor>
+          </Style>
+          <Style>
+            <Name>strings</Name>
+            <ForeColor>Maroon</ForeColor>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>directives</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>htmlparams</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>syntax errors</Name>
+            <ForeColor>Red</ForeColor>
+          </Style>
+          <Style>
+            <Name>codes nippets</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>255:180:228:180</BackColor>
+          </Style>
+          <Style>
+            <Name>GabReservedWords</Name>
+            <ForeColor>Blue</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabTokenWithBrackets</Name>
+            <ForeColor>Gray</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabFunctionIntrinsicDebug</Name>
+            <ForeColor>White</ForeColor>
+            <BackColor>Red</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+          <Style>
+            <Name>GabVariable</Name>
+            <ForeColor>Teal</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabVariableSystemDefined</Name>
+            <ForeColor>Teal</ForeColor>
+            <FontStyle>Bold Italic</FontStyle>
+          </Style>
+          <Style>
+            <Name>GabGui</Name>
+            <ForeColor>OrangeRed</ForeColor>
+          </Style>
+          <Style>
+            <Name>GabProgramSubStartEnd</Name>
+            <ForeColor>Black</ForeColor>
+            <BackColor>LightGray</BackColor>
+            <FontStyle>Bold</FontStyle>
+            <PlainText>true</PlainText>
+          </Style>
+        </Styles>
+      </Scheme>
+    </Lexer>
+    <TextStrings>
+      <Lines>
+        <string>Program.Sub.ScreenSU.Start</string>
+        <string>Program.Sub.ScreenSU.End</string>
+        <string />
+        <string>Program.Sub.Preflight.Start</string>
+        <string />
+        <string>Program.Sub.Preflight.End</string>
+        <string />
+        <string>Program.Sub.Main.Start</string>
+        <string>F.Intrinsic.Control.SetErrorHandler("Main_Err")</string>
+        <string>F.Intrinsic.Control.ClearErrors</string>
+        <string />
+        <string>V.Local.sError.Declare(String)</string>
+        <string />
+        <string>'Coded by: WAW</string>
+        <string>'Date: 2/27/17</string>
+        <string>'There will be a search button on to the Forecast maintenance screen to allow the user 1 field to be searched. </string>
+        <string>'The search will return all distinct values from the user 1 field in the forecast Header records. </string>
+        <string>'Once a value is selected the user 1 field will populate with the data.</string>
+        <string />
+        <string>'open connection to the database</string>
+        <string>F.ODBC.Connection!con.OpenConnection(V.Ambient.PDSN,V.Ambient.PUser,V.Ambient.PPass)</string>
+        <string />
+        <string>'declare local variables</string>
+        <string>V.Local.suser1.Declare(String)</string>
+        <string>v.Local.ssql.Declare(String)</string>
+        <string>v.Local.stitles.Declare(string)</string>
+        <string>v.Local.iwidths.Declare(long)</string>
+        <string>v.Local.sret.Declare(String)</string>
+        <string />
+        <string>'if the populate hook fires, set the browser button on the screen</string>
+        <string>f.Intrinsic.Control.If(v.Caller.Hook,=,50902)</string>
+        <string>'	F.Intrinsic.Variable.SetProperty(v.Passed.000288,"PW",25)</string>
+        <string>	'set the hidden control button</string>
+        <string>	V.Passed.GAB-BTN-1.Set("User 1")</string>
+        <string>	F.Intrinsic.Variable.SetProperty("GAB-BTN-1","PL",620)</string>
+        <string>	F.Intrinsic.Variable.SetProperty("GAB-BTN-1","PT",200)</string>
+        <string>	F.Intrinsic.Variable.SetProperty("GAB-BTN-1","PW",100)</string>
+        <string>	'make the button available</string>
+        <string>	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.GAB-BTN-1,"HIDE",0)</string>
+        <string>	F.Intrinsic.UI.ChangeCallerProperty(V.Passed.GAB-BTN-1,"LOCK",0)</string>
+        <string>f.Intrinsic.Control.EndIf</string>
+        <string />
+        <string>'check to see if the hook associated with the hidden control button is selected</string>
+        <string>F.intrinsic.control.if(V.Caller.Hook,=,50988)</string>
+        <string>	'set the browser type ahead</string>
+        <string>	f.Intrinsic.UI.SetBrowserHotTypeAhead(true)</string>
+        <string>	Function.Intrinsic.String.Split("User 1*!*Customer*!*Part*!*Loc*!*Description*!*Start Date","*!*",variable.local.sTitles)</string>
+        <string>	Function.Intrinsic.String.Split("800*!*1000*!*2000*!*500*!*3000*!*1000","*!*",variable.local.iWidths)</string>
+        <string>	'launch a custom browser to allow the user to select a distinct user 1 record</string>
+        <string>	Function.Intrinsic.UI.Browser("Select a User 1 field","con","Select distinct USER_1, CUSTOMER, PART, LOC, DESCRIPTION, START_DATE From V_FORECAST_SUMMARY",Variable.Local.sTitles,Variable.Local.iWidths,Variable.Local.sRet)</string>
+        <string>	Function.Intrinsic.Control.If(Variable.Local.sRet,"=","***CANCEL***")</string>
+        <string>		'if nothing is selected inform the user</string>
+        <string>		Function.Intrinsic.UI.Msgbox("No User 1 was selected!")</string>
+        <string>	Function.Intrinsic.Control.Else</string>
+        <string>		'otherwise split the return and set the selected user in the user 1 field</string>
+        <string>		 Function.Intrinsic.String.Split(Variable.Local.sRet,"*!*",Variable.Local.sRet)</string>
+        <string>		 v.Passed.000289.Set(v.Local.sret(0).Trim)</string>
+        <string>	Function.Intrinsic.Control.EndIf</string>
+        <string>F.Intrinsic.Control.EndIf</string>
+        <string />
+        <string>F.ODBC.Connection!con.close</string>
+        <string>F.Intrinsic.Control.ExitSub</string>
+        <string />
+        <string>F.Intrinsic.Control.Label("Main_Err")</string>
+        <string>F.Intrinsic.Control.If(V.Ambient.ErrorNumber,&lt;&gt;,0)</string>
+        <string>	Function.Intrinsic.String.Concat("Project: GCG_4387_Forecast_Browser.g2u",V.Ambient.Newline,V.Ambient.Newline,"Subroutine: ",V.Ambient.CurrentSubroutine,V.Ambient.NewLine,"Error Occurred ",V.Ambient.ErrorNumber," with description ",V.Ambient.ErrorDescription,V.Local.sError)</string>
+        <string>	F.Intrinsic.UI.Msgbox(V.Local.sError)</string>
+        <string>	F.Intrinsic.Control.End</string>
+        <string />
+        <string>Function.Intrinsic.Control.EndIf</string>
+        <string />
+        <string />
+        <string>Program.Sub.Main.End</string>
+        <string />
+        <string>Program.Sub.Comments.Start</string>
+        <string>${$0$}$GCG_INT_INFO$}$WAW$}$5/7/2015$}$False</string>
+        <string>${$3$}$0$}$$}$0$}$-1$}$$}$12:00:00 AM$}$This will be a custom GAB script that will run from a custom Menu Item under Bill of Material -&gt; File -&gt; Custom Cobalt BOM Import.  The user will navigate to the xml file that needs to be loaded into Global Shop.  Once the xml is parsed there will be a search in Global Shop to see if a BOM already exists for that Part Number.  If one already exists a compare screen will display showing the differences between the two.  If one does not exist then the screen will display the BOM as it will be uploaded into Global Shop.  Any parts that are listed in the BOM that are not Inventory Parts will be highlighted in Yellow.  If there are any parts not in inventory the user will have the option to click the create Parts button to generate those parts in Global Shop.  If the BOM exists in Global shop then any differences on the new import will be highlighted in Red.  After the Parts have been created then the Upload button will upload and override any previous BOM for that part.</string>
+        <string>Program.Sub.Comments.End</string>
+        <string />
+        <string />
+      </Lines>
+    </TextStrings>
+  </TextSource>
+  <Scrolling>
+    <WindowOriginY>18</WindowOriginY>
+    <Options>None</Options>
+  </Scrolling>
+  <Outlining>
+    <AllowOutlining>true</AllowOutlining>
+    <ImageSize>8</ImageSize>
+    <Ranges>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>0</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>1</Y>
+        </EndPoint>
+        <Text>Program.Sub.ScreenSU</Text>
+        <DisplayText>Program.Sub.ScreenSU</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>3</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>5</Y>
+        </EndPoint>
+        <Text>Program.Sub.Preflight</Text>
+        <DisplayText>Program.Sub.Preflight</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>7</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>72</Y>
+        </EndPoint>
+        <Text>Program.Sub.Main</Text>
+        <DisplayText>Program.Sub.Main</DisplayText>
+        <Visible>true</Visible>
+        <Level>0</Level>
+      </Range>
+      <Range>
+        <StartPoint>
+          <X>0</X>
+          <Y>74</Y>
+        </StartPoint>
+        <EndPoint>
+          <X>2147483647</X>
+          <Y>77</Y>
+        </EndPoint>
+        <Text>Program.Sub.Comments</Text>
+        <DisplayText>Program.Sub.Comments</DisplayText>
+        <Visible>false</Visible>
+        <Level>0</Level>
+      </Range>
+    </Ranges>
+  </Outlining>
+  <HyperText />
+  <Spelling />
+  <Braces />
+</SyntaxEdit>
